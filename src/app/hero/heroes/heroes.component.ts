@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from 'src/app/hero/hero';
-import { HEROES } from 'src/app/hero/mock-heroes';
-
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { AngularFireDatabase} from '@angular/fire/compat/database';
+import { child, get, getDatabase, onValue, ref } from "firebase/database";
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Database, listVal, objectVal } from '@angular/fire/database';
 
 @Component({
   selector: 'app-heroes',
@@ -10,13 +13,26 @@ import { HEROES } from 'src/app/hero/mock-heroes';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent {
-
-  heroes: Observable<Hero[]>;
+  //firestore: Firestore = inject(Firestore);
+  private database: Database = inject(Database);
+  //heroes: Observable<Hero[]>;
+  heroes: any;
 
   selectedHero?: Hero;
 
   constructor() {
-    this.heroes = of(HEROES);
+    //const aCollection = collection(this.firestore, 'heros')
+    //this.heroes = collectionData(aCollection);
+
+    const dbRef = ref(getDatabase(), `heros`);
+    listVal(dbRef).subscribe((val) => this.heroes = val);
+
+/** Observable version
+    onValue(dbRef, (snapshot) => {
+      const data = snapshot.val();
+      this.heroes = of(data)
+    });
+     */
   }
 
   onSelect(hero: Hero): void {
