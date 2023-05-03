@@ -3,12 +3,7 @@
 
 name: Manual Workflow
 
-on: 
-  workflow_dispatch:
-    inputs:
-      git-ref:
-        description: Git Ref (Optional)    
-        required: false
+on: [workflow_dispatch]
 
 jobs:
   build_and_preview:
