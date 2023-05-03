@@ -1,0 +1,19 @@
+
+<div *ngIf="hero">
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <i bp="5@sm 4@md" [class]="'sprite sprite-' + hero.id"></i>
+    <div bp="7@sm 8@md">
+        <h1>{{hero.name}} #{{hero.id}}</h1>
+        <div *ngFor="let type of hero.types" class="type" [ngClass]="type">
+          {{type}}
+        </div>
+        <p>
+            <strong>Height:</strong> {{hero.height / 10}} m
+            <strong>Weight:</strong> {{hero.weight / 10}} kg
+        </p>
+        <p>{{hero.description}}</p>
+        
+    </div>
+    <button type="button" (click)="goBack()">go back</button>
+  </div>
+
