@@ -11,27 +11,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBl7KKdIPWdW6x2wi2YqKSaW1iq3UFkl8k",
-  authDomain: "card-game-db-8f275.firebaseapp.com",
-  projectId: "card-game-db-8f275",
-  storageBucket: "card-game-db-8f275.appspot.com",
-  messagingSenderId: "915829515590",
-  appId: "1:915829515590:web:91b7e6e328ab82e311b147",
-  measurementId: "G-5V8YCZ560T"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// FireBase conf
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FirebaseApp, initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -44,9 +30,11 @@ const analytics = getAnalytics(app);
     FormsModule,
     BrowserAnimationsModule,
     HeroesModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase()),
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

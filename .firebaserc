@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "test-card-game-g6287": {
+      "hosting": {
+        "gettingStarted": [
+          "test-card-game-g6287-be397"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "test-card-game-g6287"
+  }
+}
