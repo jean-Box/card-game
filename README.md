@@ -23,3 +23,6 @@ firebaseServiceAccount Now this is required and you can find the same in your pr
 
 For that, go to settings tab of your repository and select secrets from the left menu.
 Click on New Secret. Give the Name as FIREBASE_SERVICE_ACCOUNT and in value field, paste the JSON copied in the Firebase project. Click on save.
+
+## GitHub - How to Manually Trigger a GitHub Actions Workflow
+https://levelup.gitconnected.com/how-to-manually-trigger-a-github-actions-workflow-4712542f1960
