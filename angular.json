@@ -105,7 +105,7 @@
             "ssr": false,
             "browserTarget": "gettingStarted:build:production",
             "firebaseProject": "test-card-game-g6287",
-            "firebaseHostingSite": "test-card-game-g6287-be397"
+            " Site": "test-card-game-g6287-be397"
           }
         }
       }
