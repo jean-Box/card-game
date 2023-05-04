@@ -26,4 +26,3 @@ Click on New Secret. Give the Name as FIREBASE_SERVICE_ACCOUNT and in value fiel
 
 ## GitHub - How to Manually Trigger a GitHub Actions Workflow
 https://levelup.gitconnected.com/how-to-manually-trigger-a-github-actions-workflow-4712542f1960
-
