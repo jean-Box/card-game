@@ -27,3 +27,25 @@ Click on New Secret. Give the Name as FIREBASE_SERVICE_ACCOUNT and in value fiel
 ## GitHub - How to Manually Trigger a GitHub Actions Workflow
 https://levelup.gitconnected.com/how-to-manually-trigger-a-github-actions-workflow-4712542f1960
 
+## BuG
+impossible de déploy via github mlgrer la conf auto 
+https://firebase.google.com/docs/hosting/github-integration?hl=fr
+
+```
+[2023-05-04T08:39:48.231Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/test-card-game-g6287/versions ***"error":***"code":403,"message":"Permission 'firebasehosting.sites.update' denied on resource 'projects/-/sites/test-card-game-g6287' (or it may not exist)","status":"PERMISSION_DENIED"***
+  
+  Error: HTTP Error: 403, Permission 'firebasehosting.sites.update' denied on resource 'projects/-/sites/test-card-game-g6287' (or it may not exist)
+  [2023-05-04T08:39:48.234Z] Error Context: ***
+    "body": ***
+      "error": ***
+        "code": 403,
+        "message": "Permission 'firebasehosting.sites.update' denied on resource 'projects/-/sites/test-card-game-g6287' (or it may not exist)",
+        "status": "PERMISSION_DENIED"
+      ***
+    ***,
+    "response": ***
+      "statusCode": 403
+    ***
+  ***
+```
+
